@@ -1,0 +1,33 @@
+// Get all clients
+GET http://localhost:5000/api/movies/
+
+
+###
+// Find one movie
+GET http://localhost:5000/api/movies/d5dfca4c-9011-41b1-8dc3-39749a974e7f
+
+###
+// Insert a new movie into db
+POST http://localhost:5000/api/movies/
+content-type: application/json
+
+{
+    "title": "The Goodfather",
+    "released": "15/01/1970",
+    "duration": 90
+}
+
+###
+// Delete a movie
+DELETE http://localhost:5000/api/movies/d5dfca4c-9011-41b1-8dc3-39749a974e7f
+
+###
+//UPDATE movie
+PUT http://localhost:5000/api/movies/e522fe39-13ab-4b93-8844-d1182853d474
+content-type: application/json
+
+{
+    "title": "Gladiator",
+    "released": "16/01/2001",
+    "duration": 125
+}

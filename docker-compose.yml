@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15.2
+    container_name: postgres_db_movies_flask_api
+    restart: always
+    env_file:
+      - .env
+    shm_size: 128mb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - postgres_net
+  
+networks:
+  postgres_net:
+    driver: bridge
